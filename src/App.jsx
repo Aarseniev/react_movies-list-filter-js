@@ -10,8 +10,8 @@ export const App = () => {
   const visibleMovies = normalized
     ? moviesFromServer.filter(
         movie =>
-          movie.title.toLowerCase().includes(normalized) ||
-          movie.description.toLowerCase().includes(normalized),
+          (movie.title ?? '').toLowerCase().includes(normalized) ||
+          (movie.description ?? '').toLowerCase().includes(normalized),
       )
     : moviesFromServer;
 
